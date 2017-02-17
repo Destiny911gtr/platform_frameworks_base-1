@@ -152,6 +152,10 @@ class PackageVerificationState {
             return false;
         }
 
+        if (mHasOptionalVerifier && !mOptionalVerificationComplete) {
+            return false;
+        }
+
         if (mSufficientVerifierUids.size() == 0) {
             return true;
         }
@@ -167,6 +171,10 @@ class PackageVerificationState {
      */
     public boolean isInstallAllowed() {
         if (mRequiredVerifierUid != -1 && !mRequiredVerificationPassed) {
+            return false;
+        }
+
+        if (mHasOptionalVerifier && !mOptionalVerificationPassed) {
             return false;
         }
 
