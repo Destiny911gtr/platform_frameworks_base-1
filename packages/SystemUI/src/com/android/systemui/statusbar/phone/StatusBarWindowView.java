@@ -752,9 +752,12 @@ public class StatusBarWindowView extends FrameLayout {
         ContentResolver resolver = mContext.getContentResolver();
         int qsQuickPulldownValue = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
-
+  }
+    public void setLockscreenDoubleTapToSleep() {
+        boolean isDoubleTapEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1, UserHandle.USER_CURRENT) == 1;
         if (mNotificationPanel != null) {
-            mNotificationPanel.setQsQuickPulldown(qsQuickPulldownValue);
+            mNotificationPanel.setLockscreenDoubleTapToSleep(isDoubleTapEnabled);
         }
     }
 }
