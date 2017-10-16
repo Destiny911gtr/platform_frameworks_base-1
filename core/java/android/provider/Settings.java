@@ -3992,7 +3992,7 @@ public final class Settings {
          * the setting value. See an example above.
          */
 
-       /**
+        /**
          * Whether to wake the display when plugging or unplugging the charger
          *
          * @hide
@@ -4037,6 +4037,12 @@ public final class Settings {
          * @hide
          */
         public static final String QS_SHOW_BRIGHTNESS_ICON = "qs_show_brightness_icon";
+
+        /**
+         * Whether to show the notification ticker on the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_SHOW_TICKER = "status_bar_show_ticker";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
