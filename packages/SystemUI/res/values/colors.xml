@@ -153,4 +153,5 @@
 
     <color name="zen_introduction">#ffffffff</color>
 
+    <color name="battery_level_good_color">#ff319111</color> <!-- green -->
 </resources>
