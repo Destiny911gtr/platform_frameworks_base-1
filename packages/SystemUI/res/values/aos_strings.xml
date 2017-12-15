@@ -104,4 +104,7 @@
     <!-- Recents -->
     <string name="recents_app_killed">App killed</string>
 
+    <!-- Roaming icon switch -->
+    <string name="status_bar_roaming">Roaming</string>
+
 </resources>
