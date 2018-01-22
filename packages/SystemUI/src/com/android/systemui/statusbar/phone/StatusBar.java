@@ -3121,15 +3121,18 @@ public class StatusBar extends SystemUI implements DemoMode,
         return themeInfo != null && themeInfo.isEnabled();
     }
 
-    public boolean isUsingBlackTheme() {
+    public void unloadStockDarkTheme() {
         OverlayInfo themeInfo = null;
         try {
-            themeInfo = mOverlayManager.getOverlayInfo("com.android.system.theme.black",
+            themeInfo = mOverlayManager.getOverlayInfo("com.android.systemui.theme.dark",
                     mCurrentUserId);
+            if (themeInfo != null && themeInfo.isEnabled()) {
+                mOverlayManager.setEnabled("com.android.systemui.theme.dark",
+                        false /*disable*/, mCurrentUserId);
+            }
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-        return themeInfo != null && themeInfo.isEnabled();
     }
 
     @Nullable
@@ -5201,8 +5204,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                         useDarkTheme, mCurrentUserId);
                 mOverlayManager.setEnabled("com.android.settings.theme.dark",
                         useDarkTheme, mCurrentUserId);
-                mOverlayManager.setEnabled("com.android.dui.theme.dark",
-                        useDarkTheme, mCurrentUserId);
+                if (useDarkTheme) {
+                    unloadStockDarkTheme();
+                }
             } catch (RemoteException e) {
                 Log.w(TAG, "Can't change theme", e);
             }
