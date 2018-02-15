@@ -4372,10 +4372,11 @@ public final class Settings {
        public static final String LOCKSCREEN_MEDIA_METADATA = "lockscreen_media_metadata";
 
         /**
-         *  Enable statusbar double tap gesture on to put device to sleep
+         * Select various accents to go along with system themes
+         *
          * @hide
          */
-        public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
+        public static final String ACCENT_PICKER = "accent_picker";
 
         /**
          * Status bar carrier label
