@@ -30,6 +30,10 @@
         android:summary="@string/aos_logo_summary"
         android:defaultValue="false" />
 
+    <SwitchPreference
+        android:key="volte"
+        android:title="@string/status_bar_volte" />
+
     <PreferenceCategory
         android:key="hide_statusbar_items"
         android:title="@string/statusbar_tuner_category_title">
